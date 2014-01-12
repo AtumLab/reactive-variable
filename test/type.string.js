@@ -16,4 +16,13 @@ suite("string", function() {
         expect(string.split('').reverse().join('')).to.equal('dlrow olleh');
     });
 
+    test("watch", function() {
+        var string = variable('hello');
+
+        string.set('  hello world  ');
+        expect(string.trim()).to.equal('hello world');
+        
+        string.set('hello world');
+        expect(string.split('').reverse().join('')).to.equal('dlrow olleh');
+    });
 });

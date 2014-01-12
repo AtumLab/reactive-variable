@@ -22,6 +22,7 @@ A quick example how to use rv.js:
     b.set(0);
     console.log(c.get()); // still 6
 
+
 ##  Reference Documentation
   * <http://en.wikipedia.org/wiki/Reactive_programming#approaches/>
   * <http://docs.meteor.com/#deps/>

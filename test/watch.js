@@ -9,7 +9,6 @@ var variable = molly.get('type.Variable');
 suite("watch", function() {
 
     test("with number", function() {
-        
 
         var a = new variable(1);
         var b = new variable(2);
@@ -80,5 +79,117 @@ suite("watch", function() {
             i++;
         });
         expect(i).to.equal(array.length);
+    });
+
+    test("example 01 in toturial", function() {
+        var D = variable(10);
+        var E = variable(12);
+        var F = watch(function(){
+            return D.get() + E.get();
+        }, 'Number');
+        var A = watch(function(){
+            return F.get() + 1;
+        }, 'Number');
+        var B = watch(function(){
+            return F.get() * 2;
+        }, 'Number');
+        var C = watch(function(){
+            return F.get() - 1;
+        }, 'Number');
+        expect(A.get()).to.equal(23);
+        expect(B.get()).to.equal(44);
+        expect(C.get()).to.equal(21);
+        D.set(13);
+        expect(A.get()).to.equal(26);
+        expect(B.get()).to.equal(50);
+        expect(C.get()).to.equal(24);
+    });
+
+    test("example 02 in toturial", function() {
+
+        var A = variable(1);
+        var B = variable(1);
+        var C = variable(null, 'Number');
+        C.watch(function(){
+            var value = this._value | 0;
+            return value + A.get();
+        });
+        expect(C.get()).to.equal(1);
+
+        C.watch(function(){
+            var value = this._value | 0;
+            return value + B.get();
+        });
+        expect(C.get()).to.equal(2);
+
+        A.set(1);
+        expect(C.get()).to.equal(3);
+
+        //C.unwatch(A);
+
+        //A.set(1);
+        //expect(C.get()).to.equal(3);
+
+        //B.set(1);
+        //expect(C.get()).to.equal(4);
+
+        //B.set(-4);
+        //expect(C.get()).to.equal(0);
+
+    });
+
+    test("node", function() {
+        /**
+        var Node = molly.get('reactive.Node');
+        var extend = molly.get('util.extends');
+
+        var Model = extend(function(data){
+
+            var _value = null;
+
+            this.makePull('get', function(){
+                return _value;
+            });
+
+            this.makePush('set', function(value){
+                _value = value;
+            });
+
+        }, Node);
+
+        var A = new Model(1);
+        var B = new Model(1);
+        var C = new Model(null);
+
+        console.log(A);
+        console.log(A.unwatch.toString(), 'A.unwatch');
+        console.log(Node);
+        /**
+        C.watch(function(){
+            var value = this._value | 0;
+            return value + A.get();
+        });
+        expect(C.get()).to.equal(1);
+
+        C.watch(function(){
+            var value = this._value | 0;
+            return value + B.get();
+        });
+        expect(C.get()).to.equal(2);
+
+        A.set(1);
+        expect(C.get()).to.equal(3);
+
+        C.unwatch(A);
+
+        A.set(1);
+        expect(C.get()).to.equal(3);
+
+        B.set(1);
+        expect(C.get()).to.equal(4);
+
+        B.set(-4);
+        expect(C.get()).to.equal(0);
+        */
     });
 });
