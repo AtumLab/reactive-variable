@@ -4,7 +4,7 @@ var molly = require('../lib/type/base').molly;
 require('../lib/type/variable');
 
 var variable = molly.get('type.Variable');
-/**
+
 suite("base", function() { 
 
     test("create, function", function() {
@@ -22,4 +22,3 @@ suite("base", function() {
     });
 
 });
-*/
