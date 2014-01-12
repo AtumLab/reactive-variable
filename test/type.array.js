@@ -5,7 +5,7 @@ require('../lib/watch');
 
 var variable = molly.get('type.Variable');
 var watch = molly.get('watch');
-
+/**
 suite("array", function() {
 
     test("push, pop", function() {
@@ -41,3 +41,4 @@ suite("array", function() {
         expect(array.get(1)).to.equal(10);
     });
 });
+*/

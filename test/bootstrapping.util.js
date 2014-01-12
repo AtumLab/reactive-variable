@@ -1,7 +1,7 @@
 var assert = require("assert"),
 molly = require('../lib/bootstrapping/util').molly,
 _ = require('lodash');
-
+/**
 suite("molly", function() {
 
     test("extends", function() {
@@ -27,3 +27,4 @@ suite("molly", function() {
     });
 
 });
+*/
