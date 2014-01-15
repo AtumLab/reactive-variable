@@ -5,9 +5,8 @@ require('../lib/watch');
 
 var variable = molly.get('type.Variable');
 var watch = molly.get('watch');
-/**
-suite("array", function() {
 
+suite("array", function() {
     test("push, pop", function() {
         var array = variable([1, 2, 3]);
         expect(array.pop()).to.equal(3);
@@ -41,4 +40,3 @@ suite("array", function() {
         expect(array.get(1)).to.equal(10);
     });
 });
-*/

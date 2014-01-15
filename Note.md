@@ -12,3 +12,6 @@ it's called functional reactive programming.
   * <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/Watch/>
   * Dataflow programming languages
   * <http://www.flapjax-lang.org/>
+
+  * <http://stackoverflow.com/questions/1028250/what-is-functional-reactive-programming/1030631#1030631/>
+  * <http://conal.net/papers/push-pull-frp/>
